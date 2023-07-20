@@ -10,6 +10,13 @@ cd update_was_targets
 pip install .
 
 ```
+
+Next put your Tenable.io API keys in a file in the working folder called '.env'.  It should look like this:
+```
+TIO_ACCESS_KEY=32dbc3c49db...your access key
+TIO_SECRET_KEY=f01c3bbfe83...your secret key
+```
+
 ## Usage
 Tag assets using the category 'web-app-targets' and the tag value the name of the scan that the target should be added to.
 

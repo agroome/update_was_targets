@@ -4,8 +4,9 @@ from collections import defaultdict
 from tenable.io import TenableIO
 from dotenv import load_dotenv
 from typing import Generator, Optional, Union
+from pprint import pprint
 
-load_dotenv('../.env-sandbox')
+load_dotenv()
 
 tio = TenableIO()
 
@@ -64,6 +65,8 @@ def main():
         # get config with name
         config = get_scan_config(config_name)
         config_id = config['config_id']
+
+        pprint(config)
         
         # get config details
         # endpoint docs: https://developer.tenable.com/reference/was-v2-config-details
