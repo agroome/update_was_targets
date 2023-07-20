@@ -53,11 +53,11 @@ def build_targets(tag_category: str, tag_value: Optional[str] = None) -> dict:
         addresses = result['asset']['fqdns'] or result['asset']['ipv4s']
         address = addresses[0]
         target = f'https://{address}'
-        print(f'adding {target} to {result["config_name"]}')
+        # print(f'adding {target} to {result["config_name"]}')
         # add the url to the list of targets for given config_name
         targets[result['config_name']].append(target)
     return dict(targets)
-
+ 
 
 def main():
     tag_category = 'web-app-target'
@@ -66,8 +66,6 @@ def main():
         config = get_scan_config(config_name)
         config_id = config['config_id']
 
-        pprint(config)
-        
         # get config details
         # endpoint docs: https://developer.tenable.com/reference/was-v2-config-details
         response = requests.get(f'https://cloud.tenable.com/was/v2/configs/{config_id}', headers=request_headers)
